@@ -8,6 +8,7 @@ import helmet from "helmet";
 import morgan from "morgan";
 import path from "path";
 import { fileURLToPath } from "url";
+import authRoutes from "./routes/auth.js"
 import { register } from "./controllers/auth.js";
 
 /* configurations */
@@ -36,9 +37,11 @@ const storage = multer.diskStorage({
 
 const upload = multer({ storage });
 
-/* routes with files */
+/* routes with files - not in authRoutes because const upload is needed*/
 app.post("/auth/register", upload.single("picture"), register);
 
+/* routes */ 
+app.use("/auth", authRoutes);
 
 /* mongoose setup */
 // set port and use 6001 as backup
