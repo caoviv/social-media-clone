@@ -41,3 +41,28 @@ export const register = async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 };
+
+/* logging in */
+export const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    // mongoose is finding specified email
+    const user = await User.findOne({ email: email });
+    if (!user) return res.status(400).json({ msg: "User does not exit." });
+
+    // bcrypt using the same salt to compare if the password is a match
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch)
+      return res
+        .status(400)
+        .json({ msg: "Invalid credentials. Please try again" });
+
+    // passing json web token back to user
+    const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET);
+    // prevent password from getting sent back to front-end
+    delete user.password;
+    res.status(200).json({ token, user });
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+};
