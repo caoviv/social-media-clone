@@ -4,9 +4,9 @@ import User from "../models/User";
 // get user infomation by id
 export const getUser = async (req, res) => {
   try {
-    // grab id from req.params
+    // gets id from req.params
     const { id } = req.params;
-    // use id to grab user information
+    // use id to get user's information
     const user = await User.findById(id);
     // send back to front-end 200 status & all user information
     res.status(200).json(user);
@@ -18,14 +18,14 @@ export const getUser = async (req, res) => {
 // get user friends via specified user id
 export const getUserFriends = async (req, res) => {
   try {
-    // grab id from req.params
+    // gets id from req.params
     const { id } = req.params;
-    // use id to grab user information
+    // use id to get user's information
     const user = await User.findById(id);
 
     // multiple API calls to database
     const friends = await Promise.all(
-      // grab each id under user's friends and grab all information from each friend id
+      // gets each id under user's friends and gets all information from each friend id
       user.friends.map((id) => User.findById(id))
     );
     // modify scheme for front-end
@@ -45,11 +45,11 @@ export const getUserFriends = async (req, res) => {
 /* update */
 export const addRemoveFriend = async (req, res) => {
   try {
-    // grab boths id and friendId
+    // gets both id and friendId
     const { id, friendId } = req.params;
-    // grabs all current user's infomation
+    // gets all current user's information
     const user = await User.findById(id);
-    // grabs friend's infomation
+    // gets friend's information
     const friend = await User.findById(friendId);
 
     // sees if friend's id is included in the user's friends list

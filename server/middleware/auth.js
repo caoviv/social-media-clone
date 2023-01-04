@@ -3,7 +3,7 @@ import { Jwt } from "jsonwebtoken";
 // next parameter allows the func to continue
 export const verifyToken = async (req, res, next) => {
   try {
-    // request from the front-end grabs the authorization header
+    // request from the front-end gets the authorization header
     let token = req.header("Authorization");
 
     // if token does not exist
