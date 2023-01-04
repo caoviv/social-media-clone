@@ -1,4 +1,4 @@
-import * as jwt from 'jsonwebtoken'
+import * as jwt from "jsonwebtoken";
 
 // next parameter allows the func to continue
 export const verifyToken = async (req, res, next) => {
