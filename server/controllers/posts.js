@@ -33,7 +33,7 @@ export const createPost = async (req, res) => {
 };
 
 /* read */
-// gets all posts from the database to fill the feed
+// gets all posts from the database to populate the feed
 export const getFeedPosts = async (req, res) => {
   try {
     const post = await Post.find();
