@@ -42,8 +42,7 @@ const Navbar = () => {
   const alt = theme.palette.background.alt;
 
   // convenience variable
-  // const fullName = `${user.firstName} ${user.lastName}`;
-  const fullName = `User's fullName`;
+  const fullName = `${user.firstName} ${user.lastName}`;
 
   return (
     <FlexBetween padding="1rem 6%" backgroundColor={alt}>
