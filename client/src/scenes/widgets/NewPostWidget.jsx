@@ -23,7 +23,7 @@ import UserImage from "components/UserImage";
 import WidgetWrapper from "components/WidgetWrapper";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setPosts } from "state";
+import { setFeed } from "state";
 
 const NewPostWidget = ({ picturePath }) => {
   const dispatch = useDispatch();
@@ -61,7 +61,7 @@ const NewPostWidget = ({ picturePath }) => {
     // back-end returns a lists of posts data
     const posts = await response.json();
     // keep the list of posts
-    dispatch(setPosts({ posts }));
+    dispatch(setFeed({ posts }));
     // reset states after API call
     setImage(null);
     setPost("");
