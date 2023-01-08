@@ -8,7 +8,7 @@ const router = express.Router()
 // gets users feed - all post, there is no curated feed algorithm 
 router.get("/", verifyToken, getFeedPosts);
 // gets all posts made by a specific user via id
-router.get("/:userId/posts", verifyToken, getUserPosts);
+router.get("/:userId", verifyToken, getUserPosts);
 
 /* update */
 // like/unlike a post 
