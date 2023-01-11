@@ -59,9 +59,9 @@ const NewPostWidget = ({ picturePath }) => {
       body: formData,
     });
     // back-end returns a lists of posts data
-    const posts = await response.json();
+    const data = await response.json();
     // keep the list of posts
-    dispatch(setFeed({ posts }));
+    dispatch(setFeed({ posts: data.reverse() }));
     // reset states after API call
     setImage(null);
     setPost("");
