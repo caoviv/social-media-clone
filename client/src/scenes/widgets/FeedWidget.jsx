@@ -17,7 +17,7 @@ const FeedWidget = ({ userId, isProfile = false }) => {
     // make data usable through response.json
     const data = await response.json();
     // setFeed Value with data received from db
-    dispatch(setFeed({ posts: data }));
+    dispatch(setFeed({ posts: data.reverse() }));
   };
   // On profile page grab all posts by that user
   const getUserPosts = async () => {
@@ -28,7 +28,7 @@ const FeedWidget = ({ userId, isProfile = false }) => {
     // make data usable through response.json
     const data = await response.json();
     // setFeed Value with data received from db
-    dispatch(setFeed({ posts: data }));
+    dispatch(setFeed({ posts: data.reverse() }));
   };
 
   useEffect(() => {
