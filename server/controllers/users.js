@@ -1,7 +1,7 @@
 import User from "../models/User.js";
 
 /* read */
-// get user infomation by id
+// get user information by id
 export const getUser = async (req, res) => {
   try {
     // gets id from req.params
