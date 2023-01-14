@@ -1,4 +1,4 @@
-# social-media-clone
+# Social Media Clone
 I wanted to build a social media clone as there is a lot of potential to practice programming and learn more about the capabilities of programming.
 
 ## Running the app
