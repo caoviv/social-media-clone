@@ -1,15 +1,29 @@
-# Social Media Clone
+# Connect Crowd - A Social Media Clone
 I wanted to build a social media clone as there is a lot of potential to practice programming and learn more about the capabilities of programming.
 
-## Running the app
-on one terminal, cd into client/ and the run the command line "npm run start"
+## Setup
+To run this project, install it locally using npm:
 
-on another  terminal, cd into server/ and the run the command line "npm run start"
+Client-side
 
-## Public Resources used
-Quote for dummy posts were generated from https://incorrectquotesgenerator.com
-Images were sourced from https://unsplash.com
-Names were generated from https://www.behindthename.com/random/
+```
+$ cd client/
+$ npm install
+$ npm run start
+```
+
+Server-side
+
+```
+$ cd server/
+$ npm install
+$ npm run start
+```
+
+## Resouces used for this project
+- Quote for dummy posts were generated from https://incorrectquotesgenerator.com
+- Images were sourced from https://unsplash.com
+- Names were generated from https://www.behindthename.com/random/
 
 ## Future items to build upon
 - implement a more complex password configuration
