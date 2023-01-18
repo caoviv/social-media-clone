@@ -11,10 +11,10 @@ const HomePage = () => {
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
   const { _id, picturePath } = useSelector((state) => state.user);
   return (
-    <Box>
-      <Navbar />
+    <Box display="flex" justifyContent="flex-end">
+      <Navbar/>
       <Box
-        width="100%"
+        width="95%"
         padding="2rem 6%"
         display={isNonMobileScreens ? "flex" : "block"}
         gap="0.5rem"

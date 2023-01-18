@@ -2,16 +2,16 @@ import { useState } from "react";
 import {
   Box,
   IconButton,
-  InputBase,
+  // InputBase,
   Typography,
-  Select,
-  MenuItem,
-  FormControl,
+  // Select,
+  // MenuItem,
+  // FormControl,
   useTheme,
   useMediaQuery,
 } from "@mui/material";
 import {
-  Search,
+  // Search,
   Message,
   DarkMode,
   LightMode,
@@ -19,8 +19,9 @@ import {
   Help,
   Menu,
   Close,
+  Logout,
 } from "@mui/icons-material";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch /*useSelector*/ } from "react-redux";
 import { setMode, setLogout } from "state";
 import { useNavigate } from "react-router-dom";
 import FlexBetween from "components/FlexBetween";
@@ -29,33 +30,44 @@ const Navbar = () => {
   const [isMobileMenuToggled, setIsMobileMenuToggled] = useState(false);
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const user = useSelector((state) => state.user);
+  // const user = useSelector((state) => state.user);
   // useMediaQuery() is a built-in MUI hook - determines screen width, use media query in react rather than in css
   const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
   // useTheme() allows the use of theme settings from theme.js
   const theme = useTheme();
-  const neutralLight = theme.palette.neutral.light;
+  // const neutralLight = theme.palette.neutral.light;
   const dark = theme.palette.neutral.dark;
   const background = theme.palette.background.default;
   const primaryLight = theme.palette.primary.light;
   const alt = theme.palette.background.alt;
 
   // convenience variable
-  const fullName = `${user.firstName} ${user.lastName}`;
+  // const fullName = `${user.firstName} ${user.lastName}`;
 
   return (
-    <FlexBetween padding="1rem 6%" backgroundColor={alt}>
+    <Box
+      display="flex"
+      flexDirection="column"
+      alignItems="center"
+      backgroundColor={alt}
+      height="100%"
+      width="5%"
+      position="fixed"
+      left="0"
+    >
       <FlexBetween gap="1.75rem">
         <Typography
           fontWeight="bold"
           fontSize="clamp(1rem, 2rem, 2.25rem)"
           color="primary"
+          padding="1rem 0"
           onClick={() => navigate("/home")}
           sx={{ "&:hover": { color: primaryLight, cursor: "pointer" } }}
         >
-          Connect Crowd
+          CC
         </Typography>
+        {/*  Search bar
         {isNonMobileScreens && (
           <FlexBetween
             backgroundColor={neutralLight}
@@ -69,11 +81,12 @@ const Navbar = () => {
             </IconButton>
           </FlexBetween>
         )}
+        */}
       </FlexBetween>
 
       {/* desktop nav */}
       {isNonMobileScreens ? (
-        <FlexBetween gap="2rem">
+        <FlexBetween gap="2rem" flexDirection="column">
           <IconButton onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
               <DarkMode sx={{ fontSize: "25px" }} />
@@ -84,6 +97,11 @@ const Navbar = () => {
           <Message sx={{ fontSize: "25px" }} />
           <Notifications sx={{ fontSize: "25px" }} />
           <Help sx={{ fontSize: "25px" }} />
+          <Logout
+            sx={{ fontSize: "25px" }}
+            onClick={() => dispatch(setLogout())}
+          />
+          {/* drop down menu for more profile options
           <FormControl variant="standard" value={fullName}>
             <Select
               value={fullName}
@@ -107,7 +125,8 @@ const Navbar = () => {
               </MenuItem>
               <MenuItem onClick={() => dispatch(setLogout())}>Log Out</MenuItem>
             </Select>
-          </FormControl>
+          </FormControl> 
+          */}
         </FlexBetween>
       ) : (
         <IconButton
@@ -159,6 +178,11 @@ const Navbar = () => {
             <Message sx={{ fontSize: "25px" }} />
             <Notifications sx={{ fontSize: "25px" }} />
             <Help sx={{ fontSize: "25px" }} />
+            <Logout
+              sx={{ fontSize: "25px" }}
+              onClick={() => dispatch(setLogout())}
+            />
+            {/* drop down menu for more profile options
             <FormControl variant="standard" value={fullName}>
               <Select
                 value={fullName}
@@ -185,10 +209,11 @@ const Navbar = () => {
                 </MenuItem>
               </Select>
             </FormControl>
+             */}
           </FlexBetween>
         </Box>
       )}
-    </FlexBetween>
+    </Box>
   );
 };
 
