@@ -117,8 +117,9 @@ const UserWidget = ({ userId, picturePath }) => {
 
       <Divider />
 
+{/* Other social media accounts  */}
       {/* fourth row */}
-      <Box p="1rem 0">
+      {/* <Box p="1rem 0">
         <Typography fontSize="1rem" color={main} fontWeight="500" mb="1rem">
           Other Socials
         </Typography>
@@ -149,7 +150,7 @@ const UserWidget = ({ userId, picturePath }) => {
         </FlexBetween>
       </Box>
     </WidgetWrapper>
-  );
+  ); */}
 };
 
 export default UserWidget;
