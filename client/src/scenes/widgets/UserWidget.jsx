@@ -115,7 +115,7 @@ const UserWidget = ({ userId, picturePath }) => {
         </FlexBetween>
       </Box>
 
-      <Divider />
+      {/* <Divider /> */}
 
 {/* Other social media accounts  */}
       {/* fourth row */}
