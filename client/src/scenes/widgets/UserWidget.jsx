@@ -1,6 +1,6 @@
 import {
   ManageAccountsOutlined,
-  EditOutlined,
+  // EditOutlined,
   LocationOnOutlined,
   WorkOutlineOutlined,
 } from "@mui/icons-material";
