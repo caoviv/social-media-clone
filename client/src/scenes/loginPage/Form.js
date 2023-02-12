@@ -75,7 +75,7 @@ const Form = () => {
 
     // save everything returned to the backend 
     const savedUserResponse = await fetch(
-      "http://localhost:3001/auth/register",
+      "https://connectcrowd.onrender.com/auth/register",
       {
         method: "POST",
         // sending formData to the above API call 
@@ -94,7 +94,7 @@ const Form = () => {
   };
 
   const login = async (values, onSubmitProps) => {
-    const loggedInResponse = await fetch("http://localhost:3001/auth/login", {
+    const loggedInResponse = await fetch("https://connectcrowd.onrender.com/auth/login", {
       method: "POST",
       // data is formatted already for back-end and can just be passed through as is 
       headers: { "Content-Type": "application/json" },

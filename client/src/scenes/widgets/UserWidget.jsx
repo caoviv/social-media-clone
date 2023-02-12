@@ -23,7 +23,7 @@ const UserWidget = ({ userId, picturePath }) => {
 
   // API call to get user information from db
   const getUser = async () => {
-    const response = await fetch(`http://localhost:3001/users/${userId}`, {
+    const response = await fetch(`https://connectcrowd.onrender.com/users/${userId}`, {
       method: "GET",
       //   verifying user has authorisation
       headers: { Authorization: `Bearer ${token}` },

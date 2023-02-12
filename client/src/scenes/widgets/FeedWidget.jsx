@@ -10,7 +10,7 @@ const FeedWidget = ({ userId, isProfile = false }) => {
 
   // On home page grab all posts
   const getPosts = async () => {
-    const response = await fetch("http://localhost:3001/posts", {
+    const response = await fetch("https://connectcrowd.onrender.com/posts", {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
@@ -21,7 +21,7 @@ const FeedWidget = ({ userId, isProfile = false }) => {
   };
   // On profile page grab all posts by that user
   const getUserPosts = async () => {
-    const response = await fetch(`http://localhost:3001/posts/${userId}`, {
+    const response = await fetch(`https://connectcrowd.onrender.com/posts/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });
