@@ -5,7 +5,7 @@ I wanted to build a social media clone as there is a lot of potential to practic
 - Authentication & authorisation
 - Light and dark mode
 - Create posts including image upload
-- Friends list
+- Friends lists - currently bugged
 - Profile pages
 
 ## Visit the [site](https://connectcrowd.netlify.app)!
