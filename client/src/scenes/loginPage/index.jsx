@@ -27,6 +27,9 @@ const LoginPage = () => {
           Welcome to Connect Crowd, social media for those whose want to
           connect.
         </Typography>
+        <Typography fontWeight="200" variant="h5" sx={{ mb: "1.5rem" }}>
+          Please note the back-end is deployed on render and will go in sleep mode after 15 minutes if there are no requests for the application. So please be patient the first time you send a request.
+        </Typography>
         <Form />
       </Box>
     </Box>
